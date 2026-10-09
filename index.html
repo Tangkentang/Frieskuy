@@ -5,13 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frieskuy! - Jagonya Kentang Goreng</title>
     
-    <!-- Google Fonts: Poppins for modern food brand feel -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS Integration -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -19,10 +14,10 @@
             theme: {
                 extend: {
                     colors: {
-                        brandYellow: '#FBBF24', // Appetizing warm yellow
-                        brandRed: '#DC2626',    // Catchy spicy red
-                        darkText: '#1F2937',    // Elegant dark for text
-                        bgLight: '#FFFBEB'      // Soft yellowish background
+                        brandYellow: '#FBBF24',
+                        brandRed: '#DC2626',
+                        darkText: '#1F2937',
+                        bgLight: '#FFFBEB'
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -38,10 +33,9 @@
             background-color: #FFFBEB;
         }
         
-        /* Smooth SPA fade transition */
         .page-section {
             animation: fadeSlideUp 0.5s ease-out forwards;
-            display: none; /* Hidden by default, JS will toggle */
+            display: none;
         }
         
         .page-section.active {
@@ -53,19 +47,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Background with dark overlay for text readability */
         .hero-bg {
             background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
-                        url('https://images.unsplash.com/photo-1576107232684-1279f390859f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+                        url('1.jpg') center/cover no-repeat;
         }
 
-        /* Polka-dot background pattern for playful vibe */
         .bg-pattern {
             background-image: radial-gradient(#FDE68A 2px, transparent 2px);
             background-size: 30px 30px;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #FEF3C7; }
         ::-webkit-scrollbar-thumb { background: #FBBF24; border-radius: 5px; }
@@ -77,13 +68,11 @@
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Brand Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer transform transition hover:scale-105" onclick="navigateSPA('beranda')">
                     <i class="fa-solid fa-french-fries text-brandRed text-3xl mr-2"></i>
                     <span class="font-black text-3xl text-darkText tracking-tighter">Fries<span class="text-brandRed">kuy!</span></span>
                 </div>
                 
-                <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex space-x-8 items-center">
                     <button onclick="navigateSPA('beranda')" id="nav-beranda" class="nav-btn text-brandRed font-bold hover:text-brandRed transition">Beranda</button>
                     <button onclick="navigateSPA('keunggulan')" id="nav-keunggulan" class="nav-btn text-gray-500 font-semibold hover:text-brandRed transition">Keunggulan</button>
@@ -93,7 +82,6 @@
                     </button>
                 </nav>
 
-                <!-- Mobile Hamburger Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-toggle" class="text-gray-700 hover:text-brandRed focus:outline-none p-2 transition">
                         <i class="fa-solid fa-bars text-3xl"></i>
@@ -102,7 +90,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl">
             <div class="px-6 py-4 space-y-3 text-center">
                 <button onclick="navigateSPA('beranda')" class="block w-full py-3 font-bold text-gray-800 hover:text-brandRed bg-gray-50 rounded-xl">Beranda</button>
@@ -115,7 +102,6 @@
 
     <main class="flex-grow relative">
 
-        <!-- ================= SECTION 1: BERANDA ================= -->
         <section id="beranda" class="page-section active w-full">
             <div class="hero-bg min-h-[88vh] flex items-center">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -140,7 +126,6 @@
             </div>
         </section>
 
-        <!-- ================= SECTION 2: KEUNGGULAN ================= -->
         <section id="keunggulan" class="page-section w-full py-24 bg-pattern min-h-[85vh]">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -149,7 +134,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Feature Card 1 -->
                     <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border-b-4 border-brandYellow text-center">
                         <div class="w-20 h-20 bg-yellow-100 text-brandYellow rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
                             <i class="fa-solid fa-potato"></i>
@@ -158,7 +142,6 @@
                         <p class="text-gray-600">Bukan kentang olahan tepung. Kami pakai kentang asli pilihan dengan potongan tebal yang pas buat dikunyah.</p>
                     </div>
 
-                    <!-- Feature Card 2 -->
                     <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border-b-4 border-brandRed text-center">
                         <div class="w-20 h-20 bg-red-100 text-brandRed rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
                             <i class="fa-solid fa-fire-burner"></i>
@@ -167,7 +150,6 @@
                         <p class="text-gray-600">Teknik menggoreng dua kali bikin Frieskuy super garing di luar tapi tetap empuk di bagian dalam. Anti lembek!</p>
                     </div>
 
-                    <!-- Feature Card 3 -->
                     <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border-b-4 border-brandYellow text-center">
                         <div class="w-20 h-20 bg-yellow-100 text-brandYellow rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
                             <i class="fa-solid fa-jar"></i>
@@ -179,7 +161,6 @@
             </div>
         </section>
 
-        <!-- ================= SECTION 3: PROMO ================= -->
         <section id="promo" class="page-section w-full py-24 bg-white min-h-[85vh]">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -196,10 +177,9 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     
-                    <!-- Promo Card 1 -->
                     <div class="bg-bgLight rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col group border border-yellow-100">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1630431341973-02e1b662ce3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paket Single" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <img src="2.jpg" alt="Paket Single" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             <div class="absolute top-4 left-4 bg-brandYellow text-darkText font-bold px-4 py-1.5 rounded-full text-sm shadow-md">Single</div>
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
@@ -219,11 +199,10 @@
                         </div>
                     </div>
 
-                    <!-- Promo Card 2 -->
                     <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl transition duration-300 flex flex-col group border-2 border-brandRed transform md:-translate-y-6 relative">
                         <div class="absolute top-0 inset-x-0 bg-brandRed text-center py-1.5 text-white font-bold text-xs tracking-widest uppercase z-20">Paling Laku 🔥</div>
                         <div class="relative h-64 overflow-hidden mt-6">
-                            <img src="https://images.unsplash.com/photo-1599595507301-830219614a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paket Couple" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <img src="3.jpg" alt="Paket Couple" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -242,10 +221,9 @@
                         </div>
                     </div>
 
-                    <!-- Promo Card 3 -->
                     <div class="bg-bgLight rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col group border border-yellow-100">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1534080554247-f3c7a36c92d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paket Party" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <img src="4.jpg" alt="Paket Party" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             <div class="absolute top-4 left-4 bg-brandYellow text-darkText font-bold px-4 py-1.5 rounded-full text-sm shadow-md">Party / Tongkrongan</div>
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
@@ -269,16 +247,13 @@
             </div>
         </section>
 
-        <!-- ================= SECTION 4: PESAN ================= -->
         <section id="pesan" class="page-section w-full py-24 bg-darkText min-h-[85vh] relative overflow-hidden">
-            <!-- Background Decoration -->
             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brandRed rounded-full filter blur-[100px] opacity-30"></div>
             <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brandYellow rounded-full filter blur-[100px] opacity-20"></div>
             
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
                     
-                    <!-- Contact / Details Section -->
                     <div class="p-8 md:p-12 lg:w-1/2 bg-white flex flex-col justify-center">
                         <span class="text-brandRed font-bold uppercase tracking-wider text-sm mb-2">Order Sekarang</span>
                         <h2 class="text-4xl font-black text-darkText mb-4">Pengen Ngemil?</h2>
@@ -291,7 +266,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-darkText text-lg">Admin WhatsApp</h4>
-                                    <p class="text-gray-600">+62 811-2233-4455</p>
+                                    <p class="text-gray-600">+62 85711167128</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-5">
@@ -309,21 +284,18 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-darkText text-lg">Jam Operasional</h4>
-                                    <p class="text-gray-600">Setiap Hari: 15.00 - 23.00 WITA</p>
+                                    <p class="text-gray-600">Setiap Hari: 16.00 - 23.00 WITA</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- WhatsApp Action Button -->
                         <a href="https://wa.me/6281122334455?text=Halo%20Frieskuy,%20aku%20mau%20pesan..." target="_blank" class="w-full text-center bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-4 rounded-xl shadow-lg shadow-green-500/30 transition-all transform hover:-translate-y-1 text-lg flex justify-center items-center gap-3">
                             <i class="fa-brands fa-whatsapp text-2xl"></i> Pesan via WhatsApp
                         </a>
                     </div>
 
-                    <!-- Image Section -->
                     <div class="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                        <img src="https://images.unsplash.com/photo-1585692558552-6e27a65b9000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kentang Goreng Frieskuy" class="absolute inset-0 w-full h-full object-cover">
-                        <!-- Gradient Overlay for style -->
+                        <img src="1.jpg" alt="Kentang Goreng Frieskuy" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-tr from-brandRed/80 to-transparent mix-blend-multiply"></div>
                         <div class="absolute inset-0 flex flex-col justify-end p-10">
                             <div class="bg-white/20 backdrop-blur-md p-6 rounded-2xl border border-white/30">
@@ -341,7 +313,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-darkText text-white py-12 border-t-4 border-brandRed">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
@@ -359,25 +330,20 @@
         </div>
     </footer>
 
-    <!-- SPA Navigation Logic -->
     <script>
         function navigateSPA(targetId) {
-            // 1. Hide all page sections
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // 2. Show the targeted section
             const activeSection = document.getElementById(targetId);
             if (activeSection) {
-                // Small delay to re-trigger animation
                 setTimeout(() => {
                     activeSection.classList.add('active');
                 }, 10);
             }
 
-            // 3. Update Navbar Active States
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(btn => {
                 btn.classList.remove('text-brandRed', 'font-bold');
@@ -390,23 +356,19 @@
                 activeBtn.classList.add('text-brandRed', 'font-bold');
             }
 
-            // 4. Scroll to top automatically
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // 5. Close Mobile Menu if it's open
             const mobileMenu = document.getElementById('mobile-menu');
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
         }
 
-        // Mobile Menu Toggle Event Listener
         document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
 
-        // Initialize SPA: Ensure 'Beranda' is visible on first load
         document.addEventListener('DOMContentLoaded', () => {
             navigateSPA('beranda');
         });
